@@ -1,0 +1,32 @@
+Start Program
+      ↓
+Load Game Variables
+      ↓
+Display Main Menu
+      ↓ ↓ ↓
+  1. Start Game       2. Instructions        3. Exit Program
+      ↓                     ↓                     ↓
+ Ask Question           Show Rules              Save Data
+      ↓                     ↓                     ↓
+Choose Option          Return to Menu              End
+      ↓
+Use Lifeline?
+(55 = 50-50, 99 = Skip)
+      ↓
+   Answer Question
+      ↓
+Is Answer Correct?
+      ↓            ↓
+   Yes             No
+   ↓               ↓
+Show Prize      Game Over
+   ↓               ↓
+Next Question   Save Data
+   ↓               ↓
+If Last Question?   End
+   ↓
+ Show Final Winnings
+      ↓
+ Save Data to File
+      ↓
+        End
