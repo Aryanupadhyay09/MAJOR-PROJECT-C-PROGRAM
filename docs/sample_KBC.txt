@@ -1,0 +1,16 @@
+1   → Start New Game
+3   → Answer Q1 (Option 3)
+
+55  → Use 50-50 on Q2
+2   → After 50-50, choose option 2
+
+99  → Use Skip lifeline on Q3
+
+1   → Answer Q4
+4   → Answer Q5
+3   → Answer Q6
+2   → Answer Q7
+1   → Answer Q8
+4   → Answer Q9
+3   → Answer Q10
+
