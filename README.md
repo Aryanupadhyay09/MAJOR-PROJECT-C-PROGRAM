@@ -1,6 +1,6 @@
-KAUN BANEGA CROREPATI
+# KAUN BANEGA CROREPATI
 
-DESCRIPTION
+## DESCRIPTION
 The KBC Game Project is a console-based quiz game written in C programming language, inspired by the famous TV show Kaun Banega Crorepati.
 The objective of the game is to answer multiple-choice questions correctly, use limited lifelines strategically, and win increasing prize money.
 The program is designed using modular coding practices, with separate files for:
