@@ -3,12 +3,12 @@
 
 void welcome() {
     printf("\n------------------------------------------\n");
-    printf("        WELCOME TO KBC GAME PROJECT        \n");
+    printf("        CHALO KHELE KAUN BANEGA CROREPATI        \n");
     printf("------------------------------------------\n");
 }
 
 void showMainMenu() {
-    printf("\n========== MAIN MENU ==========\n");
+    printf("\n");
     printf("1. Start New Game\n");
     printf("2. Instructions\n");
     printf("3. Exit\n");
