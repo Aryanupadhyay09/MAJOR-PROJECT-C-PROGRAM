@@ -2,43 +2,75 @@
 #include "kbc.h"
 
 int main() {
-    int answer, lifeline, used5050 = 0, usedAudience = 0;
+    int choice;
+    int answer, q, used5050 = 0, usedSkip = 0;
+
     welcome();
 
-    for (int q = 1; q <= 3; q++) {
-        showQuestion(q);
+    while (1) {
+        showMainMenu();
+        scanf("%d", &choice);
 
-        printf("\nDo you want lifeline? (1. Yes  2. No): ");
-        scanf("%d", &lifeline);
+        if (choice == 1) {
+            printf("\nStarting new KBC game...\n");
 
-        if (lifeline == 1) {
-            printf("\nChoose Lifeline:\n1. 50-50\n2. Audience Poll\n");
-            scanf("%d", &lifeline);
+            for (q = 1; q <= 3; q++) {
+                showQuestion(q);
 
-            if (lifeline == 1 && !used5050) {
-                lifeline5050(q);
-                used5050 = 1;
-            } else if (lifeline == 2 && !usedAudience) {
-                lifelineAudience(q);
-                usedAudience = 1;
-            } else {
-                printf("\nYou already used this lifeline!\n");
+                printf("\nUse Lifeline?\n");
+                printf("55 = 50-50, 99 = Skip, or enter your answer (1-4): ");
+                scanf("%d", &answer);
+
+                if (answer == 55) {
+                    if (!used5050) {
+                        lifeline5050(q);
+                        used5050 = 1;
+                        printf("\nEnter answer: ");
+                        scanf("%d", &answer);
+                    } else {
+                        printf("\n50-50 already used!\n");
+                        q--;
+                        continue;
+                    }
+                }
+
+                if (answer == 99) {
+                    if (!usedSkip) {
+                        lifelineSkip();
+                        usedSkip = 1;
+                        continue;
+                    } else {
+                        printf("\nSkip already used!\n");
+                        q--;
+                        continue;
+                    }
+                }
+
+                if (checkAnswer(q, answer)) {
+                    printf("\nCorrect Answer!\n");
+                    showPrize(q);
+                } else {
+                    printf("\nWrong Answer! Game Over.\n");
+                    break;
+                }
             }
         }
 
-        printf("\nEnter your final answer: ");
-        scanf("%d", &answer);
+        else if (choice == 2) {
+            printf("\nINSTRUCTIONS:\n");
+            printf("• Choose correct answer from 1 to 4.\n");
+            printf("• Lifelines available: 50-50 and Skip.\n");
+            printf("• Game ends on wrong answer.\n\n");
+        }
 
-        if (checkAnswer(q, answer)) {
-            printf("Correct Answer!\n");
-        } else {
-            printf("Wrong Answer! Game Over.\n");
+        else if (choice == 3) {
+            printf("\nThank you for playing KBC!\n");
             break;
         }
 
-        printf("\n-------------------------------------\n");
+        else {
+            printf("\nInvalid choice. Try again.\n");
+        }
     }
-
-    printf("\nThank you for playing KBC!\n");
     return 0;
 }
